@@ -21,6 +21,6 @@ def index():
 
 if __name__ == '__main__':
     # Open the app in the default web browser
-    webbrowser.open('http://localhost:5000')
+    webbrowser.open('http://20.20.10.120:5000')
     # Start the Flask development server
-    socketio.run(app, host="localhost")
+    socketio.run(app, host="20.20.10.120")
