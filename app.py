@@ -7,8 +7,15 @@ app.config['SECRET'] = "secret!123"
 socketio = SocketIO(app, cors_allowed_origins="*")
 
 
+@socketio.on('message')
+def handle_message(message):
+    print(f"Received message: {message}")
+    if message != "User connected!":
+        send(message, broadcast=True)
+
+
 @app.route('/')
-def home():
+def index():
     return render_template("index.html")
 
 
