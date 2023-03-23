@@ -8,6 +8,13 @@
     </head>
     <body style="text-align: center; font-family: Arial, serif; font-size: 14pt">
         <script type="text/javascript">
+            /*
+            * Initialize the SocketIO connection with the Flask server and send a 'User connected!' message
+            * when the connection is established.
+            * Listen for incoming 'message' events and append them to the 'messages' div.
+            * When the 'Send' button is clicked, send the message entered in the 'message' input field
+            * along with the username entered in the 'username' input field to the server using SocketIO.
+            */
             $(document).ready(function(){
                 var socket = io.connect("http://20.20.10.120:5000")
                 socket.on('connect', function(){
